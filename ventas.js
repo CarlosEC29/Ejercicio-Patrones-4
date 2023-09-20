@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var cliente_1 = require("./cliente");
+var cliente_2 = require("./cliente");
+var clienteRegular = new cliente_1.Cliente("Cliente Regular", cliente_2.TipoDeCliente.Regular);
+var clienteGold = new cliente_1.Cliente("Cliente Gold", cliente_2.TipoDeCliente.Gold);
+var clientePlatinum = new cliente_1.Cliente("Cliente Platinum", cliente_2.TipoDeCliente.Platinum);
+clienteRegular.compra("Heladera Gafa, 286Lts, No Frost", 285000);
+clienteGold.compra("Lavarropas Samsung, 8 Lts, 1200 rpm, frontal", 324000);
+clientePlatinum.compra("Iphone 13", 690000);
