@@ -14,12 +14,11 @@ export enum TipoDeCliente {
 export class Cliente {
     private estrategiaDedescuento: Descuento;
 
-
-    constructor(private nombre: string, private tipo: TipoDeCliente) {
+    public constructor(private nombre: string, private tipo: TipoDeCliente) {
         this.setDescuento();
     }
 
-    private setDescuento() {
+    public setDescuento() {
         switch (this.tipo) {
             case TipoDeCliente.Regular:
                 this.estrategiaDedescuento = new ClientesRegulares();
@@ -33,10 +32,8 @@ export class Cliente {
         }
     }
 
-    compra(nombreProducto: string, precio: number) {
+    public compra(nombreProducto: string, precio: number) {
         const precioDescuento = this.estrategiaDedescuento.aplicarDescuento(precio);
-        console.log(
-            `${this.nombre} ha comprado ${nombreProducto} por ${precioDescuento} pesos.`
-        );
+        console.log(`${this.nombre} ha comprado ${nombreProducto} por ${precioDescuento} pesos.`);
     }
 }
